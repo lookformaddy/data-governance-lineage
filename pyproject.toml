@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "data-governance-lineage"
+version = "0.1.0"
+description = "Enterprise data governance & lineage platform: dataset catalog, column-level lineage graph with impact analysis, role x classification access policies with audit trail and break-glass, certification lifecycle, schema-change reviews, PII tagging/masking with subject access & erasure handling, and lineage-aware quality taint propagation."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [{ name = "Manas Mohanty" }]
+keywords = ["data-engineering", "data-governance", "lineage", "data-catalog", "access-policy", "privacy", "gdpr"]
+dependencies = []
+
+[project.optional-dependencies]
+api = ["fastapi>=0.110", "uvicorn>=0.29"]
+dev = ["pytest>=8.0"]
+
+[project.scripts]
+data-governance-lineage = "data_governance_lineage.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]

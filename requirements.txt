@@ -1,0 +1,5 @@
+# Core engine is stdlib-only. FastAPI/uvicorn power the optional HTTP
+# surface (service.py) and its tests, which auto-skip when not installed.
+fastapi>=0.110
+uvicorn>=0.29
+pytest>=8.0
